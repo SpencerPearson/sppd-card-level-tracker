@@ -3,6 +3,7 @@
 import os
 import random
 
+import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
@@ -14,7 +15,17 @@ GUILD = os.getenv('DISCORD_GUILD')
 ## client = discord.Client(intents=intents)
 
 bot = commands.Bot(command_prefix='!')
-@bot.command(name='thedudeabides', help='Responds with a random quote from The Big Lebowski.')
+
+# @bot.command(name='create-channel')
+# @commands.has_role('admin')
+# async def create_channel(ctx, channel_name='real-python'):
+#     guild = ctx.guild
+#     existing_channel = discord.utils.get(guild.channels, name=channel_name)
+#     if not existing_channel:
+#         print(f'Creating a new channel: {channel_name}')
+#         await guild.create_text_channel(channel_name)
+
+@bot.command(name='dude', help='Responds with a random quote from The Big Lebowski.')
 async def the_dude_abides(ctx):
     the_dude_abides = [
         'Nihilists! Fuck me. I mean, say what you want about the tenets of National Socialism, Dude, at least it\'s an ethos.',
@@ -32,5 +43,17 @@ async def the_dude_abides(ctx):
     response = random.choice(the_dude_abides)
     await ctx.send(response)
 
+@bot.command(name='roll', help='Simulates rolling dice.')
+async def roll(ctx, number_of_dice: int, number_of_sides: int):
+    dice = [
+        str(random.choice(range(1, number_of_sides + 1)))
+        for _ in range(number_of_dice)
+    ]
+    await ctx.send(', '.join(dice))
+
+@bot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.errors.CheckFailure):
+        await ctx.send('You do not have the correct role for this command.')
 
 bot.run(TOKEN)
