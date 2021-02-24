@@ -25,3 +25,6 @@ $RECYCLE.BIN/
 
 # credentials for google API
 *.json
+
+#error log
+err.log
