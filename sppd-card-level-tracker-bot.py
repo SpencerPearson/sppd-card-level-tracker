@@ -4,6 +4,7 @@ import os
 import random
 
 import discord
+import pyodbc
 from discord.ext import commands
 from dotenv import load_dotenv
 
@@ -24,6 +25,10 @@ bot = commands.Bot(command_prefix='!')
 #     if not existing_channel:
 #         print(f'Creating a new channel: {channel_name}')
 #         await guild.create_text_channel(channel_name)
+
+#@bot.command(name='levelup', help='Increases a card\'s stored level by 1.')
+#async def levelup(ctx, card_name)
+#    response = 
 
 @bot.command(name='dude', help='Responds with a random quote from The Big Lebowski.')
 async def the_dude_abides(ctx):

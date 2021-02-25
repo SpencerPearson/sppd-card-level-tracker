@@ -1,0 +1,17 @@
+import pyodbc 
+conn = pyodbc.connect('Driver={SQL Server};'
+                      'Server=.\sqlexpress;'
+                      'Database=SppdCardDatabase;'
+                      'Trusted_Connection=yes;')
+
+cursor = conn.cursor()
+cursor.execute('SELECT * FROM SppdCardDatabase.dbo.Cards')
+
+for row in cursor:
+    print(row[1])
+
+# tigerspence2012Levels = [5, 5, 5, 3, 4, 4, 5, 4, 1, 5, 5, 4, 4, 4, 5, 5, 4, 5, 5, 5, 3, 4, 4, 3, 5, 3, 4, 5, 5, 4, 5, 5, 4, 4, 5, 4, 3, 5, 4, 5, 3, 6, 5, 4, 4, 4, 5, 2, 4, 4, 3, 3, 4, 3, 4, 5, 4, 3, 4, 6, 4, 4, 1, 6, 5, 5, 3, 6, 4, 5, 5, 2, 4, 1, 2, 5, 4, 3, 4, 2, 3, 4, 5, 5, 5, 2, 5, 5, 5, 4, 5, 5, 5, 3, 5, 4, 5, 4, 4, 4, 4, 3, 3, 3, 4, 4, 4, 5, 6, 4, 5, 7, 4, 5, 4, 6, 4, 4, 2, 4, 4, 4, 3, 3, 5, 3, 5, 4, 5, 4, 4, 4, 4, 3, 3, 5, 4, 5, 4, 4, 4, 5, 5, 4, 5, 4, 4, 4, 4, 3, 5, 5, 3, 3, 4, 2]
+# cardNames = ['Bandita Sally', 'Calamity Heidi', 'Smuggler Ike', 'Captain Wendy', 'Deckhand Butters', 'Frontier Bradley', 'Gunslinger Kyle', 'Hookhand Clyde', 'Inuit Kenny', 'Pirate Ship Timmy', 'Shaman Token', 'Sharpshooter Shelly', 'Storyteller Jimmy', 'Arrowstorm', 'Barrel Dougie', 'Buccaneer Bebe', 'Lightning Bolt', 'Outlaw Tweek', 'Medicine Woman Sharon', 'Sheriff Cartman', 'Stan of Many Moons', 'Swashbuckler Red', 'Thunderbird', 'Big Mesquite Murph', 'Fireball', 'Incan Craig', 'Pocahontas Randy', 'Swordsman Garrison', 'Astronaut Butters', 'Enforcer Jimmy', 'Space Warrior Token', 'Alien Clyde', 'Bounty Hunter Kyle', 'Four-assed Monkey', 'Freeze Ray', 'Gizmo Ike', 'Ice Sniper Wendy', 'Poison', 'Program Stan', 'Robo Bebe', 'Space Pilot Bradley', 'Visitors', 'Warboy Tweek', 'Alien Drone', 'Cyborg Kenny', 'Hyperdrive', 'Marine Craig', 'Mecha Timmy', 'Mind Control', 'Powerfist Dougie', 'Sizzler Stuart', 'Alien Queen Red', 'A.W.E.S.O.M.-O 4000', 'Sixth Element Randy', 'Firkle', 'Dogpoo', 'Michael', 'Mr. Hankey', 'Nelly', 'Rat Swarm', 'Towelie', 'Marcus', 'Mayor McDaniels', 'Mr. Mackey', 'Nathan', 'PC Principal', 'Pete', 'Pigeon Gang', 'Starvin\' Marvin', 'Terrance and Phillip', 'Terrance Mephesto', 'Woodland Critters', 'Big Gay Al', 'Classi', 'Henrietta', 'Mimsy', 'Officer Barbrady', 'President Garrison', 'Santa Claus', 'Satan', 'Manbearpig', 'Choirboy Butters', 'Power Bind', 'Purify', 'Angel Wendy', 'Archangel Bradley', 'Cupid Cartman', 'Friar Jimmy', 'Hercules Clyde', 'Hermes Kenny', 'Poseidon Stan', 'Regeneration', 'Scout Ike', 'Youth Pastor Craig', 'Zen Cartman', 'Dark Angel Red', 'Energy Staff', 'Hallelujiah', 'Imp Tweek', 'Jesus', 'Medusa Bebe', 'Prophet Dougie', 'The Master Ninjew', 'Witch Doctor Token', 'Sexy Nun Randy', 'Unholy Combustion', 'Pope Timmy', 'Priest Maxi', 'Paladin Butters', 'Princess Kenny', 'Underpants Gnomes', 'Blood Elf Bebe', 'Canadian Knight Ike', 'Catapult Timmy', 'Dark Mage Craig', 'Elven King Bradley', 'Nymph Nichole', 'Robin Tweek', 'Shieldmaiden Wendy', 'Stan the Great', 'Chicken Coop', 'City Wok Guy', 'Dragonslayer Red', 'Dwarf Engineer Dougie', 'Dwarf King Clyde', 'Kyle of the Drow Elves', 'Le Bard Jimmy', 'Rogue Token', 'The Amazingly Randy', 'Witch Garrison', 'Mr. Slave Executioner', 'Sorceress Liane', 'Transmogrify', 'Cock Magic', 'Grand Wizard Cartman', 'Captain Diabetes', 'Chaos Hamsters', 'Super Fart', 'The Chomper', 'Alternate Human Kite', 'Fastpass', 'Lava!', 'Mosquito', 'Professor Chaos', 'Super Craig', 'Toolshed', 'Doctor Timothy', 'General Disarray', 'Human Kite', 'Mint-Berry Crunch', 'Tupperware', 'Wonder Tweek', 'Mary Jane Randy', 'Mysterion', 'The Coon', 'Call Girl']
+
+
+# print(len(str(tigerspence2012Levels)))

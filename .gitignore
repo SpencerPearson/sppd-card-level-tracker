@@ -7,7 +7,10 @@ __pycache__
 .env
 myvenv/
 .venv/
+
 # Database?
+db.sqlite3
+*.db
 
 # assets folder at project root
 /assets/
